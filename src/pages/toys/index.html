@@ -2,27 +2,235 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="style.css" rel="stylesheet" />
-    <link href="/common.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
-    <link rel="stylesheet" href="/static/fonts/oswald.css" />
-    <link rel="shortcut icon" href="/static/images/favicon.ico" />
-    <title>Игрушки</title>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Toy for kids</title> 
   </head>
   <body>
     @@include('header/index.html')
-    <main class="toys-main">
-      <div class="container">
-        <h1 class="title-block title-block_one">Игрушки</h1>
-        <h2 class="title-block title-block_two">
-          Вы находитесь на странице игрушек
-        </h2>
+    <main class="toys-page">
+      <h1 class="toy-title container"> Toy for kids </h1>
+      <div class="toy-breadcrumbs container">
+        <ol class="hidden-marker breadcrumbs">
+          <li>
+            <a class="breadcrumbs-item" href="/index.html"> Home </a>
+          </li>
+          <li>
+            <img class="breadcrumbs-item" src="/static/images/bread.svg" alt="&#62;">
+          </li>
+          <li>
+            <a class="breadcrumbs-item" href="catalog/index.html"> Catalog </a>
+          </li>
+          <li>
+            <img class="breadcrumbs-item" src="/static/images/bread.svg" alt="&#62;">
+          </li>
+          <li class="breadcrumbs-item active">Toys </li>
+        </ol>
+      </div>
+      <section class="filters">
+        <h2 class="visually-hidden"> Product's filter </h2>
+        <div class="toys-form container">
+          <form class="filter-form" method="POST" action="https://form-data-dl.herokuapp.com/api/messages">
+            <div class="cost-filter">
+              <label class="filter-name" for="input-cost"> Cost </label>
+              <input name="cost" class="cost-line" id="input-cost" type="range" min="0" max="500" value="1">
+              <div class="cost-scroll">
+                <div class="scroll-up">0</div>
+                <div class="scroll-to">500</div>
+              </div>
+            </div>
+            <fieldset class="fieldset-color">
+              <legend class="filter-name"> Color </legend>
+              <ul class="marker hidden-marker">
+                <li class="color-item">
+                  <label class="filter-item">
+                    <input class="filter-item visually-hidden" name="black" type="checkbox">
+                    <span class="filter-item-indicator"> </span>
+                    <span class="filter-item-text"> Black </span> 
+                  </label>
+                </li>
+                <li class="color-item">
+                  <label class="filter-item">
+                    <input class="filter-item visually-hidden" name="blue" type="checkbox">
+                    <span class="filter-item-indicator"></span>
+                    <span class="filter-item-text"> Blue </span>  
+                  </label>
+                </li>
+                <li class="color-item">
+                  <label class="filter-item">
+                    <input class="filter-item visually-hidden" name="green" type="checkbox">
+                    <span class="filter-item-indicator"></span>
+                    <span class="filter-item-text"> Green </span>                
+                  </label>
+                </li>
+                <li class="color-item">
+                  <label class="filter-item">
+                    <input class="filter-item visually-hidden" name="white" type="checkbox">
+                    <span class="filter-item-indicator"></span>
+                    <span class="filter-item-text"> White </span> 
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="fieldset-delivery">
+              <legend class="filter-name"> Delivery </legend>
+              <ul class="marker hidden-marker">
+                <li class="delivery-item">
+                  <label class="filter-item">
+                    <input class="form-radio filter-item visually-hidden" name="delivery" type="radio">
+                    <span class="filter-delivery-indicator"></span>
+                    <span class="filter-item-text"> Free shipping </span>                  
+                  </label>
+                </li>
+                <li class="delivery-item">
+                  <label class="filter-item">
+                    <input class="form-radio filter-item visually-hidden" name="delivery" type="radio">
+                    <span class="filter-delivery-indicator"></span>
+                    <span class="filter-item-text"> Fast shipping </span>  
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="fieldset-amount">
+              <legend class="filter-name amount-margin">Amount</legend>
+              <ul class="range-list hidden-marker ">
+                <li class="amount-button ">
+                  <label class="hide-radio">
+                    <input class="amount visually-hidden hide-radio" name="indicator" type="radio">
+                    <span class="filter-amount-indicator"> </span>
+                    <span class="filter-amount-text" >  0-5 </span>
+                  </label>
+                </li>
+                <li class="amount-button">
+                  <label class="hide-radio">
+                    <input class="amount visually-hidden hide-radio" name="indicator" type="radio">
+                    <span class="filter-amount-indicator"></span>
+                    <span class="filter-amount-text">  10-20 </span>
+                  </label>
+                </li>
+                <li class="amount-button">
+                  <label class="hide-radio">
+                    <input class="amount visually-hidden hide-radio" name="indicator" type="radio">
+                    <span class="filter-amount-indicator"></span>
+                    <span class="filter-amount-text"> 20-50 </span>  
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            @@include('button/index.html',{
+              "text": "Apply",
+              "class": "filter-form-button"
+            })
+          </form>
+        </div>
+      </section>
+      <div class="toys container">
+        <ul class="toys-list hidden-marker">
+          <li class="toy-item">
+            <a class="learn-more-link" href="#">
+              <img class="toys-img" src="/static/images/shark.jpg" alt="shark" width="380" height="385">
+              <div class="learn-more"> learn more </div>
+            </a>
+            <div class="product-description">
+              SHARKY BEAN BAG CHAIR COVER
+            </div>
+            <div class="price">
+              <span class="product-price"> $60.00 USD </span>
+            </div>
+          </li>
+          <li class="toy-item">
+            <a class="learn-more-link" href="#">
+              <img class="toys-img" src="/static/images/frames.jpg" alt="deco frames" width="380" height="385">
+              <div class="learn-more"> learn more </div>
+            </a>
+            <div class="product-description">
+              BRASS DECO FRAMES
+            </div>
+            <div class="price">
+              <span class="product-price"> $66.00 USD </span>
+            </div>
+          </li>
+          <li class="toy-item">
+            <a class="learn-more-link" href="#">
+              <img class="toys-img" src="/static/images/apron.jpg" alt="apron" width="380" height="385">
+              <div class="learn-more"> learn more </div>
+            </a>
+            <div class="product-description">
+              CIBO FULL APRON
+            </div>
+            <div class="price">
+              <span class="product-price"> $60.00 USD </span>
+            </div>
+          </li>
+          <li class="toy-item">
+            <a class="learn-more-link" href="#">
+              <img class="toys-img" src="/static/images/machine.jpg" alt="gumball machine" width="380" height="385">
+              <div class="learn-more"> learn more </div>
+            </a>
+            <div class="product-description">
+              GATCHA GATCHA GUMBALL MACHINE
+            </div>
+            <div class="price">
+              <span class="product-price"> $56.00 USD </span>
+            </div>
+          </li>
+          <li class="toy-item">
+            <a class="learn-more-link" href="#">
+              <img class="toys-img" src="/static/images/candle.jpg" alt="candle" width="380" height="385">
+              <div class="learn-more"> learn more </div>
+            </a>
+            <div class="product-description">
+              CHRISTMAS ADVENT SCENTED CANDLE
+            </div>
+            <div class="price">
+              <span class="product-price"> $29.00 USD </span>
+            </div>
+          </li>
+          <li class="toy-item">
+            <a class="learn-more-link" href="#">
+              <img class="toys-img" src="/static/images/spinning.jpg" alt="shark" width="380" height="382">
+              <div class="learn-more"> learn more </div>
+            </a>
+            <div class="product-description">
+              TANGLE SPINNING TEA LIGHT
+            </div>
+            <div class="price">
+              <span class="product-price"> $56.00 USD </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="page-block container">
+        <button class="page-change change-back">
+        </button>
+        <div class="pages">
+          <ul class="hidden-marker pagination">
+            <li class="pages-list">
+              <a class="page current" href="#">1
+              </a>
+            </li>
+            <li class="pages-list">
+              <a class="page" href="#">2
+              </a>
+            </li>
+            <li class="pages-list">
+              <a class="page" href="#">3
+              </a>
+            </li>
+            <li class="pages-list">
+              <a class="page" href="#">4
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button class="page-change change-next">
+        </button>
       </div>
     </main>
     @@include('footer/index.html')
   </body>
-  <script src="index.js"></script>
-</html>
+  </html>

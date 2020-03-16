@@ -1,3 +1,376 @@
-main.toys-main {
- padding: 30px 0;
+
+
+/* title*/
+
+.toy-title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  text-transform: uppercase;
+  margin-top: 60px;
+  margin-bottom: 15px;
 }
+
+/*filters*/
+.filters {
+  background-color: rgba(125, 151, 218, 0.2);
+}
+
+.toys-form {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border: 0 none;
+}
+
+.filter-form {
+  border: none;
+  display: flex;
+  padding-top: 42px;
+}
+
+.filter-name {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1e0606;
+  margin-bottom: 12px;
+}
+
+.filter-item {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1e0606;
+  margin-bottom: 12px;
+  font-weight: normal;
+  cursor: pointer;
+}
+/*cost scroll*/
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  border: 8.35px solid #c29974;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -9px;
+}
+
+input[type="range"]::-webkit-range-track {
+  background: none;
+  border: none;
+}
+
+input[type="range"]:hover {
+  opacity: 0.9;
+}
+
+/*opacity вешается и на линию и на круг,как убрать с круга?*/
+.cost-line {
+  -webkit-appearance: none;
+  width: 188px;
+  margin-top: 13px;
+  background-color: #000000;
+  margin-left: 5px;
+  opacity: 0.5;
+}
+
+.scroll {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1e0606;
+}
+
+.range {
+  display: flex;
+}
+
+.cost-filter {
+  display: flex;
+  flex-direction: column;
+  margin-right: 83px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.cost-scroll {
+  display: flex;
+  margin-top: 17px;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.scroll-up {
+  display: flex;
+  margin-right: 169px;
+}
+
+.marker {
+  margin-top: 0px;
+}
+
+/*checkbox*/
+
+.filter-item-indicator {
+  padding-right: 29px;
+  position: relative;
+}
+
+.filter-item-indicator::before {
+  content: "";
+  width: 19px;
+  height: 19px;
+  border: 2px solid #c29974;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: block;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+
+.filter-item:checked ~ .filter-item-indicator::after {
+  content: "";
+  background-image: url(./../../images/checked.svg);
+  position: absolute;
+  width: 14.23px;
+  height: 14.64px;
+  margin-left: 3px;
+  margin-top: 0px;
+}
+
+.filter-item:checked ~ .filter-item-text,
+.filter-item:hover ~ .filter-item-text,
+.filter-item:focus ~ .filter-item-text {
+  text-decoration-line: underline;
+}
+
+.color-item {
+  margin-bottom: 15px;
+}
+
+.fieldset-color {
+  margin-right: 96px;
+}
+
+/*radio */
+
+.filter-delivery-indicator {
+  padding-right: 29px;
+  position: relative;
+}
+
+.filter-delivery-indicator::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c29974;
+  border-radius: 100%;
+}
+
+.filter-item:checked ~ .filter-delivery-indicator::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 20%;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #c29974;
+}
+
+.filter-item:checked ~ .filter-item-text,
+.filter-item:hover ~ .filter-item-text,
+.filter-item:focus ~ .filter-item-text {
+  text-decoration-line: underline;
+}
+
+.delivery-item {
+  margin-bottom: 12px;
+}
+
+.fieldset-delivery {
+  margin-right: 45px;
+}
+
+/* amount radio */
+
+.range-list {
+  display: flex;
+  margin-top: 0px;
+}
+
+.amount-margin {
+  margin-bottom: 10px;
+}
+
+.filter-amount-indicator {
+  position: relative;
+}
+
+.filter-amount-indicator::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 35px;
+  background-color: none;
+}
+
+.amount:checked ~ .filter-amount-indicator::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 20%;
+  width: 80px;
+  height: 35px;
+}
+
+.hide-radio {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1e0606;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.filter-amount-text {
+  width: 80px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #1e0606;
+  background-color: #ffffff;
+}
+
+.amount:checked ~ .filter-amount-text,
+.amount:hover ~ .filter-amount-text,
+.amount:focus ~ .filter-amount-text {
+  background-color: #eddeeb;
+}
+
+.amount:checked ~ .filter-amount-text,
+.amount:active {
+  background-color: #f3d0db;
+}
+
+.fieldset-amount {
+  padding-right: 57px;
+}
+
+/*
+.filter-form-button {
+  display: flex;
+  margin-bottom: 135px;
+  margin-top: 39px;
+}
+
+/* products list */
+
+.toys {
+  margin-top: 60px;
+}
+
+.toys-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: 16px;
+}
+
+.price {
+  margin-bottom: 25px;
+}
+
+.toy-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.product-description {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #1e0606;
+  margin-bottom: 15px;
+  margin-top: 28px;
+}
+
+.product-price {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1e0606;
+}
+
+.learn-more {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 29px;
+  color: #1e0606;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 88px;
+  left: 87px;
+  width: 207px;
+  height: 207px;
+  background-color: #e5eaf8;
+}
+
+.learn-more-link:hover .learn-more,
+.learn-more-link:focus .learn-more {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.learn-more-link:active .learn-more {
+  opacity: 0.67;
+  cursor: pointer;
+}
+
+.learn-more-link {
+  outline: none;
+}
+
