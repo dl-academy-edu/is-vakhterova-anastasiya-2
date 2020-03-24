@@ -1,27 +1,256 @@
-// Подключение компонентов
-@import "./header/header";
-@import "./footer/footer";
 
 body {
-  font-family: Oswald, sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 .container {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1220px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.title-block {
-  margin: 0 0 20px 0;
-
-  &_one {
-    font-size: 30px;
-    text-transform: uppercase;
-  }
-  &_two {
-    font-size: 25px;
-    max-width: 500px;
-  }
+.hidden-marker {
+  list-style-type: none;
+  margin-left: 0px;
+  padding: 0px;
 }
+
+.visually-hidden {
+  font-size: 0;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* breadcrums */
+
+.breadcrumbs-item {
+  font-family: Crimson Text;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  color: #1e0606;
+  margin-right: 20px;
+  margin-bottom: 46px;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  opacity: 0.5;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* порядок страниц */
+
+.page-change {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: none;
+  padding: 0px;
+  padding: 0;
+  border: none;
+}
+
+.change-next {
+  background-image: url(/static/images/next1.png);
+  width: 18px;
+  height: 30px;
+}
+
+.change-next:hover,.change-next:focus {
+  background-image: url(/static/images/next2.png);
+  cursor: pointer;
+}
+
+.change-next:active {
+  background-image: url(/static/images/next3.png);
+}
+
+.change-next:focus {
+  outline: none;
+}
+
+.change-back {
+  background-image: url(/static/images/next1.png);
+  width: 18px;
+  height: 30px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.change-back:hover,.change-back:focus {
+  background-image: url(/static/images/next2.png);
+  cursor: pointer;
+}
+
+.change-back:active {
+  background-image: url(/static/images/next3.png);
+}
+
+.change-back:focus {
+  outline: none;
+}
+
+.pagination {
+  display: flex;
+  margin-left: 64px;
+}
+
+.page-block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+}
+
+.pages-list {
+  margin-right: 65px;
+}
+
+.page {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #1e0606;
+}
+
+.current {
+  color: #c29974;
+}
+
+.page:hover, .page:focus {
+  opacity: 0.5;
+}
+
+.page:focus {
+  outline: none;
+}
+
+/*form */
+
+.form-label {
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 20px;
+  margin-bottom: 1px;
+  color: #1e0606;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+
+.form-input {
+  line-height: 47px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #1e0606;
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+.form-chechbox {
+  margin-bottom: 20px;
+  border: 0 none;
+  padding: 0px;
+}
+
+.textarea-massage {
+  height: 150px;
+  margin-top: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.form-textarea {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+}
+
+.form-column-100 {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.form-input:hover, .form-input:focus {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.form-input:active {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.textarea-massage:hover, .textarea-massage:focus {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.textarea-massage:active {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.textarea-massage:focus {
+  outline: none;
+}
+
+
+
+// Подключение компонентов
+@import "./header/header";
+@import "./footer/footer";
+@import "./button/button";
+@import "./link/link";

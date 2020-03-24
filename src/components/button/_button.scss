@@ -1,0 +1,49 @@
+/* button */
+
+.button {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: #000000;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 9px 22px;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #c29974;
+}
+
+.button:active {
+  background-color: #cfaf91;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:disabled {
+  background-color: #c1c1c1;
+}
+
+.poster-link {
+  width: 161px;
+  min-height: 40px;
+  margin-left: 133px;
+  margin-bottom: 89px;
+  display: block;
+  cursor: pointer;
+}
+
+.filter-form-button {
+  display: flex;
+  margin-bottom: 135px;
+  margin-top: 39px;
+}
+
+

@@ -1,3 +1,129 @@
-main.catalog-main {
- padding: 30px 0;
+/* title */
+.category-title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  text-transform: uppercase;
+  margin-top: 60px;
+  margin-bottom: 15px;
+}
+
+/* product category */
+
+.category-text {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 32px;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  top: 133px;
+  left: 141px;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  text-align: center;
+}
+
+.category-link:hover .category-text,
+.category-link:focus .category-text {
+  text-decoration-line: underline;
+  pointer-events: visible;
+  cursor: pointer;
+}
+
+.category-link:focus {
+  outline: none;
+}
+
+.category-link:active .category-text {
+  text-decoration-line: underline;
+  pointer-events: visible;
+}
+
+.category-item {
+  width: 280px;
+  padding-right: 10px;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 23px;
+}
+
+.background-first {
+  background-color: #dbe4db;
+}
+
+.background-second {
+  background-color: rgba(186, 142, 107, 0.3);
+}
+
+.background-third {
+  background-color: #f8f2da;
+}
+
+.background-fourth {
+  background-color: rgba(9, 3, 79, 0.17);
+}
+
+.background-fifth {
+  background-color: rgba(207, 68, 111, 0.25);
+}
+
+.background-sixth {
+  background-color: rgba(125, 151, 218, 0.2);
+}
+
+.category-item:nth-child(4) {
+  margin-left: 195px;
+}
+
+.category-list {
+  margin-top: 0px;
+  margin-left: -20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* section product descriptiom */
+
+.product-description {
+  /*section*/
+  width: 680px;
+  margin-left: 177px;
+  margin-bottom: 60px;
+}
+
+.description {
+  /*title*/
+  margin-bottom: 25px;
+  margin-top: 21px;
+  font-size: 38px;
+  line-height: 46px;
+}
+
+.descriprion-text {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1e0606;
+  width: 680px;
+  margin-bottom: 16px;
+}
+
+.text-margin {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
